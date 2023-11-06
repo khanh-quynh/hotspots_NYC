@@ -49,3 +49,6 @@ Bronx,2000,5,BX07,Bronxdale,34309
 ![E-R Diagram](./images/er-diagram.svg)
 
 
+## C. Database Design
+- Create SQLite database named `data.db` within the data directory with two tables named `hotspots` and `populations` within the given database file that can accommodate the data in the `wifi.csv` and `neighborhood_populations.csv`.
+- See further at [SQLite Script](https://github.com/khanh-quynh/hotspots_NYC/blob/main/queries.sql) 
