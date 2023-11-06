@@ -46,6 +46,6 @@ Bronx,2000,5,BX07,Bronxdale,34309
 
 ### Entity-Relationship diagramming
 - The following ER diagram shows a 4NF-compliant form of this data
-![E-R Diagram](./image/er-diagram.svg)
+![E-R Diagram](./images/er-diagram.svg)
 
 
