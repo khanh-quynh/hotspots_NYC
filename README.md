@@ -1,8 +1,8 @@
 ## Wifi Hotspots in NYC
 
-### A. Original Data
+## A. Original Data
 
-#### 1. wifi.csv
+### 1. wifi.csv
 - [wifi.csv](./data/wifi.csv), which shows all publically available Wi-Fi hotspots in NYC. This data has been extracted and slightly modified from the [NYC Wi-Fi Hotspot Locations data set](https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw), published by NYC Open Data.
 
 ```csv
@@ -27,7 +27,7 @@ Here are few important fields in this data:
 - `postcode` - the zip code of the location of the hotspot
 
 
-#### 2. neighborhood_populations.csv
+### 2. neighborhood_populations.csv
 - [neighborhood_populations.csv](./data/neighborhood_populations.csv), which contains the populations of each NYC neighborhood. This data follows the structure indicated in the first few sample lines below. This data has been sourced from NYC Open Data's [New York City Population By Neighborhood Tabulation Areas](https://data.cityofnewyork.us/City-Government/New-York-City-Population-By-Neighborhood-Tabulatio/swpk-hqdp/data) data set.
 
 ```csv
@@ -39,10 +39,12 @@ Bronx,2000,5,BX06,Belmont,25967
 Bronx,2000,5,BX07,Bronxdale,34309
 ```
 
-### B. Normalization and Entity-Relationship Diagram
-### Normalization and Entity-relationship diagramming
+## B. Normalization
+### Normalization 
 - The data in `wifi.csv` is not in 4NF. To meet 4NF, data has to satisfy 1NF, 2NF, and 3NF. In this case, for 1NF, there are missing values across the table, so not every record has the same number of fields. For example, some values `name` and `type` are just NULL. Therefore, data in wifi.csv fails 1NF. We can also see that the data in `wifi.csv` does not meet 3NF either beacause there are non-key fields that only provide facts for other non-key fields. In other words, there is functional dependency between `nta` and `nta_code`.
 - Similar to wifi.csv, `neighborhood_populations.csv` fails to satisfy 3NF because there exists functional dependency between `nta` and `nta_code`. Therefore, it does not meet 4NF.
+
+### Entity-Relationship diagramming
 - The following ER diagram shows a 4NF-compliant form of this data
 ![E-R Diagram](./image/er-diagram.svg)
 
